@@ -19,7 +19,7 @@ public class PanelOneAdapter extends RecyclerView.Adapter<PanelOneAdapter.MyView
     int[] image;
     int[] music;
     String[] panelName;
-    private int visibleItemCount = 2;
+    private int visibleItemCount = 4;
     private boolean showAllItems = false;
 
     private static ClickListener clickListener;

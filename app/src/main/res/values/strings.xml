@@ -15,26 +15,23 @@
         <item>প্যানেল-১১</item>
         <item>প্যানেল-১২</item>
         <item>প্যানেল-১৩</item>
-    </string-array>
-
-    <string-array name="panelTwo">
-        <item>প্যানেল-১</item>
-        <item>প্যানেল-২</item>
-        <item>প্যানেল-৩</item>
-        <item>প্যানেল-৪</item>
-        <item>প্যানেল-৫</item>
-        <item>প্যানেল-৬</item>
-        <item>প্যানেল-৭</item>
-        <item>প্যানেল-৮</item>
-        <item>প্যানেল-৯</item>
-        <item>প্যানেল-১০</item>
-        <item>প্যানেল-১১</item>
-        <item>প্যানেল-১২</item>
-        <item>প্যানেল-১৩</item>
         <item>প্যানেল-১৪</item>
         <item>প্যানেল-১৫</item>
         <item>প্যানেল-১৬</item>
         <item>প্যানেল-১৭</item>
         <item>প্যানেল-১৮</item>
+        <item>প্যানেল-১৯</item>
+        <item>প্যানেল-২০</item>
+        <item>প্যানেল-২১</item>
+        <item>প্যানেল-২২</item>
+        <item>প্যানেল-২৩</item>
+        <item>প্যানেল-২৪</item>
+        <item>প্যানেল-২৫</item>
+        <item>প্যানেল-২৬</item>
+        <item>প্যানেল-২৭</item>
+        <item>প্যানেল-২৮</item>
+        <item>প্যানেল-২৯</item>
+        <item>প্যানেল-৩০</item>
+        <item>প্যানেল-৩১</item>
     </string-array>
 </resources>
