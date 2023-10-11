@@ -1,19 +1,28 @@
 package com.queueit.joyeeta;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     int[] music = {
@@ -90,8 +99,10 @@ public class HomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     PanelOneAdapter panelOneAdapter;
     TextView showMore1,showLess1;
-
     MediaPlayer mediaPlayer;
+    Handler handler;
+    Runnable r;
+    AlertDialog alertDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -174,11 +185,83 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        handler = new Handler();
+        r = new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+//                Toast.makeText(HomeActivity.this, "user is inactive from last 5 minutes",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this,StartActivity.class));
+                finish();
+            }
+        };
+        startHandler();
     }
 
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        AlertDialogBox();
+
+
     }
+
+    @Override
+    public void onUserInteraction() {
+        // TODO Auto-generated method stub
+        super.onUserInteraction();
+        stopHandler();//stop first and then start
+        startHandler();
+    }
+    public void stopHandler() {
+        handler.removeCallbacks(r);
+    }
+    public void startHandler() {
+        handler.postDelayed(r, 3*60*1000); //for 3 minutes
+//        handler.postDelayed(r, 3000); //for 5 minutes
+    }
+    @SuppressLint("MissingInflatedId")
+    private void AlertDialogBox()
+    {
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = LayoutInflater.from(this).inflate(R.layout.sample_dialog_box,viewGroup,false);
+
+       EditText editText = view.findViewById(R.id.et_Code);
+       TextView Exit = view.findViewById(R.id.tv_Exit);
+       Exit.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               String code = editText.getText().toString();
+               if (code.equals("5807"))
+               {
+                   finish();
+               }else {
+                   Toast.makeText(HomeActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+               }
+
+           }
+       });
+        TextView cancel = view.findViewById(R.id.tv_Cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
+        builder.setCancelable(true);
+        builder.setView(view);
+
+        alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+//    @Override
+//    public void onAttachedToWindow() {
+//        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
+//        super.onAttachedToWindow();
+//    }
+
 }
