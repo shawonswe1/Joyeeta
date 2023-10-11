@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Joyeeta</string>
+
+    <string-array name="panelOne">
+        <item>প্যানেল-১</item>
+        <item>প্যানেল-২</item>
+        <item>প্যানেল-৩</item>
+        <item>প্যানেল-৪</item>
+        <item>প্যানেল-৫</item>
+        <item>প্যানেল-৬</item>
+        <item>প্যানেল-৭</item>
+        <item>প্যানেল-৮</item>
+        <item>প্যানেল-৯</item>
+        <item>প্যানেল-১০</item>
+        <item>প্যানেল-১১</item>
+        <item>প্যানেল-১২</item>
+        <item>প্যানেল-১৩</item>
+    </string-array>
+
+    <string-array name="panelTwo">
+        <item>প্যানেল-১</item>
+        <item>প্যানেল-২</item>
+        <item>প্যানেল-৩</item>
+        <item>প্যানেল-৪</item>
+        <item>প্যানেল-৫</item>
+        <item>প্যানেল-৬</item>
+        <item>প্যানেল-৭</item>
+        <item>প্যানেল-৮</item>
+        <item>প্যানেল-৯</item>
+        <item>প্যানেল-১০</item>
+        <item>প্যানেল-১১</item>
+        <item>প্যানেল-১২</item>
+        <item>প্যানেল-১৩</item>
+        <item>প্যানেল-১৪</item>
+        <item>প্যানেল-১৫</item>
+        <item>প্যানেল-১৬</item>
+        <item>প্যানেল-১৭</item>
+        <item>প্যানেল-১৮</item>
+    </string-array>
+</resources>
