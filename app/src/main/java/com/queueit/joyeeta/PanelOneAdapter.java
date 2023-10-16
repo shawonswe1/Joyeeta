@@ -19,6 +19,7 @@ public class PanelOneAdapter extends RecyclerView.Adapter<PanelOneAdapter.MyView
     int[] image;
     int[] music;
     String[] panelName;
+    String[] panelNumber;
     private int visibleItemCount = 4;
     private boolean showAllItems = false;
 
@@ -26,11 +27,12 @@ public class PanelOneAdapter extends RecyclerView.Adapter<PanelOneAdapter.MyView
 
     public int selectedItem;
 
-    public PanelOneAdapter(Context context, int[] image, int[] music, String[] panelName) {
+    public PanelOneAdapter(Context context, int[] image, int[] music, String[] panelName, String[] panelNumber) {
         this.context = context;
         this.image = image;
         this.music = music;
         this.panelName = panelName;
+        this.panelNumber = panelNumber;
         selectedItem = -1;
     }
 
@@ -47,6 +49,7 @@ public class PanelOneAdapter extends RecyclerView.Adapter<PanelOneAdapter.MyView
 
         holder.roundedImageView.setImageResource(image[position]);
         holder.panelName.setText(panelName[position]);
+        holder.panelNumber.setText(panelNumber[position]);
 
         if (selectedItem == position){
             Log.e("s+p",""+selectedItem+"+"+position);
@@ -76,13 +79,14 @@ public class PanelOneAdapter extends RecyclerView.Adapter<PanelOneAdapter.MyView
 
         RoundedImageView roundedImageView;
         ImageView playButton,puseButton;
-        TextView panelName;
+        TextView panelName,panelNumber;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             roundedImageView = itemView.findViewById(R.id.randomLiveUserImage);
             playButton = itemView.findViewById(R.id.playButton);
             puseButton = itemView.findViewById(R.id.puseButton);
             panelName = itemView.findViewById(R.id.panelName);
+            panelNumber = itemView.findViewById(R.id.panelNumber);
             playButton.setOnClickListener(this);
             puseButton.setOnClickListener(this);
         }

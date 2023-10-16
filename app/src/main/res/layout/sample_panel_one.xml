@@ -40,8 +40,9 @@
                 android:id="@+id/linearLayout12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:visibility="visible"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/randomLiveUserImage">
@@ -54,11 +55,23 @@
                     android:fontFamily="@font/roboto_slab_bold"
                     android:paddingStart="2dp"
                     android:paddingTop="5dp"
-                    android:paddingEnd="10dp"
                     android:paddingBottom="5dp"
                     android:text="@string/app_name"
                     android:textColor="@color/black"
-                    android:textSize="13dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/panelNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="2dp"
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="27dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

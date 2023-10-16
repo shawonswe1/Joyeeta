@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
     };
 
 
-    String[] panelOneName,panelTwoName;
+    String[] panelOneName,panelNumber;
     GridLayoutManager gridLayoutManager, gridLayoutManager2;
     RecyclerView recyclerView;
     PanelOneAdapter panelOneAdapter;
@@ -103,6 +103,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getWindow(). addFlags (WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         panelOneName = getResources().getStringArray(R.array.panelOne);
+        panelNumber = getResources().getStringArray(R.array.panelNumber);
 
         showMore1 = findViewById(R.id.showMore1);
 
@@ -117,7 +118,7 @@ public class HomeActivity extends AppCompatActivity {
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        panelOneAdapter = new PanelOneAdapter(this,panelNoImage,music,panelOneName);
+        panelOneAdapter = new PanelOneAdapter(this,panelNoImage,music,panelOneName,panelNumber);
         recyclerView.setAdapter(panelOneAdapter);
 
         panelOneAdapter.setOnItemClickListener(new PanelOneAdapter.ClickListener() {
@@ -196,7 +197,8 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialogBox();
+//        AlertDialogBox();
+        super.onBackPressed();
     }
 
     @Override
